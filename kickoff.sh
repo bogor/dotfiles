@@ -8,16 +8,20 @@ mv ~/.zshrc     ~/.zshrc.old
 mkdir -p ~/bin
 mkdir -p ~/src
 mkdir -p ~/lib
+mkdir -p $HOME/lib/cfg/vim/tmp/undo
+mkdir -p $HOME/lib/cfg/vim/tmp/backup
+mkdir -p $HOME/lib/cfg/vim/tmp/swap
+mkdir -p $HOME/lib/cfg/vim/bundle
+
 
 # get muh dotfilez
 git clone https://bogor@github.com/bogor/dotfiles.git ~/lib/cfg
 git clone https://bogor@github.com/bogor/oh-my-zsh.git ~/.oh-my-zsh
 
-# build some vim paths
-mkdir -p $HOME/lib/cfg/vim/tmp/undo
-mkdir -p $HOME/lib/cfg/vim/tmp/backup
-mkdir -p $HOME/lib/cfg/vim/tmp/swap
-mkdir -p $HOME/lib/cfg/vim/bundle
+# get some repo submodules (vim bundles)
+cd ~/lib/cfg
+git submodule init
+git submodule update
 
 #---------------------------------
 # Link everything to muh cfg dir
