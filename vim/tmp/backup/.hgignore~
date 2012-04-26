@@ -1,9 +1,0 @@
- # use glob syntax.
- syntax: glob
-
- *~
- .DS_Sto*
- *.pyc
- tags
- vim/bundle/gundo
- vim/tmp
