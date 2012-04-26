@@ -23,15 +23,15 @@ mkdir -p $HOME/lib/cfg/vim/bundle
 # Link everything to muh cfg dir
 #---------------------------------
 
-ln -s "$HOME/lib/cfg/zshrc"             "$HOME/.zshrc"
-ln -s "$HOME/lib/cfg/bashrc"            "$HOME/.bashrc"
-ln -s "$HOME/lib/cfg/vim"                "$HOME/.vim"
-ln -s "$HOME/lib/cfg/vim/vimrc"          "$HOME/.vimrc"
+ln -sf "$HOME/lib/cfg/zshrc"             "$HOME/.zshrc"
+ln -sf "$HOME/lib/cfg/bashrc"            "$HOME/.bashrc"
+ln -sf "$HOME/lib/cfg/vim"                "$HOME/.vim"
+ln -sf "$HOME/lib/cfg/vim/vimrc"          "$HOME/.vimrc"
 
-ln -s "$HOME/lib/cfg/gitconfig"         "$HOME/.gitconfig"
-ln -s "$HOME/lib/cfg/gitignore_global"  "$HOME/.gitignore_global"
-ln -s "$HOME/lib/cfg/hgrc"              "$HOME/.hgrc"
-ln -s "$HOME/lib/cfg/hgignore_global"   "$HOME/.hgignore_global"
+ln -sf "$HOME/lib/cfg/gitconfig"         "$HOME/.gitconfig"
+ln -sf "$HOME/lib/cfg/gitignore_global"  "$HOME/.gitignore_global"
+ln -sf "$HOME/lib/cfg/hgrc"              "$HOME/.hgrc"
+ln -sf "$HOME/lib/cfg/hgignore_global"   "$HOME/.hgignore_global"
 
 
 #------------------------------
