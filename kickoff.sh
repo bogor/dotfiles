@@ -1,4 +1,7 @@
 #!/bin/bash    
+# TODO: Ask and interact w/ the user (e.g. "do u wanna do the python part? [Y/n]")
+# TODO: Add stuff to configure ruby automatically
+# TODO: Make stuff more dynamic so we can support mutliple systems
 
 # first backup existing stuff if any
 mv ~/.bashrc    ~/.bashrc.old
@@ -15,8 +18,8 @@ mkdir -p $HOME/lib/cfg/vim/bundle
 
 
 # get muh dotfilez
-git clone https://bogor@github.com/bogor/dotfiles.git ~/lib/cfg
-git clone https://bogor@github.com/bogor/oh-my-zsh.git ~/.oh-my-zsh
+git clone git://github.com/bogor/dotfiles.git ~/lib/cfg
+git clone git://github.com/bogor/oh-my-zsh.git ~/.oh-my-zsh
 
 # get some repo submodules (vim bundles)
 cd ~/lib/cfg
@@ -39,20 +42,17 @@ ln -sf "$HOME/lib/cfg/hgignore_global"   "$HOME/.hgignore_global"
 
 
 #------------------------------
-# Python related stuff
+# Python related stuff -- currently disabled
 #------------------------------
-mkdir -p ~/lib/python
-mkdir -p ~/lib/virtualenvs
+#mkdir -p ~/lib/python
+#mkdir -p ~/lib/virtualenvs
 
-hg clone http://bitbucket.org/ianb/pip/ ~/lib/python/pip
+#hg clone http://bitbucket.org/ianb/pip/ ~/lib/python/pip
 
-cd ~/lib/python/pip
-sudo python setup.py install
-cd
+#cd ~/lib/python/pip
+#sudo python setup.py install
+#cd
 
-sudo pip install virtualenv
-
-# TODO: Add stuff to configure ruby automatically
-# TODO: Make stuff more dynamic so we can support mutliple systems
+#sudo pip install virtualenv
 
 
