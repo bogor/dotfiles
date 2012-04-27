@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="clean"
+ZSH_THEME="mefisto"
 DISABLE_AUTO_UPDATE="true"
 
 plugins=(git bundler osx mercurial brew rvm python)
