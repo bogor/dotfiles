@@ -26,23 +26,27 @@ set wrap
 set wrapmargin=2
 set textwidth=79
 set formatoptions=qrnl
-set colorcolumn=200
+set colorcolumn=85
 
 " Encoding
 set encoding=utf-8
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General key bindings 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let mapleader = ","
 inoremap jj     <ESC>
-map q` ysiw`
 map q" ysiw"
 map q' ysiw'
+map Q' vi'p
+map Q" vi"p
+map Qb vibp
 nnoremap <leader>R :RainbowParenthesesToggle<cr>
+nnoremap <Leader><space> :noh<cr>
 
-" Python key bindings
-let g:pymode_run_key = '<leader>r'
-let g:pymode_breakpoint_key = '<leader>b'
-let g:pymode_doc_key = 'K'
+nnoremap <F1> :NERDTreeToggle<CR>
+nnoremap <F2> :FuzzyFinderMruFile<cr>
 
 " Window moving
 nnoremap <leader>w <C-w>v<C-w>l
@@ -53,16 +57,25 @@ nnoremap <C-l> <C-w>l
 nnoremap <D-1> :tabprevious<cr>
 nnoremap <D-2> :tabnext<cr>
 
-" Handle long lines
-set wrap
-set wrapmargin=2
-set textwidth=79
-set formatoptions=qrnl
-" set colorcolumn=85
+" Searching
+nnoremap / /\v
+vnoremap / /\v
 
-" Encoding
-set encoding=utf-8
+" ZoomWin configuration
+map <Leader>z :ZoomWin<CR>
 
+" CTags
+map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
+map <C-\> :tnext<CR>
+
+" Python key bindings
+let g:pymode_run_key = '<leader>r'
+let g:pymode_breakpoint_key = '<leader>b'
+let g:pymode_doc_key = 'K'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colorscheme 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " GVIM
 if has('gui_running')
 " set guifont=Bitstream\ Vera\ Sans\ Mono\ 12
@@ -110,10 +123,6 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 au FocusLost * :wa
 
-" Searching
-nnoremap / /\v
-vnoremap / /\v
-
 set ignorecase
 set smartcase
 set gdefault
@@ -121,7 +130,7 @@ set incsearch
 set showmatch
 set hlsearch
 
-nnoremap <Leader><space> :noh<cr>
+
 "nnoremap <TAB>  % 
 "vnoremap <TAB>  %
 
@@ -135,12 +144,16 @@ set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 " This is likely a bludgeon to solve some other issue, but it works
 set noequalalways
 
+" Supertab configuration 
+let g:SuperTabDefaultCompletionType = "<c-n>"
+let g:SuperTabLongestHighlight = 1
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree configuration
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let NERDTreeQuitOnOpen=1
 let NERDTreeIgnore=['\.pyc$', '\.rbc$', '\~$']
-map <Leader>n :NERDTreeToggle<CR>
+
 
 " Project Tree
 if exists("loaded_nerd_tree")
@@ -297,13 +310,6 @@ endif
 " Command-T configuration
 let g:CommandTMaxHeight=20
 
-" ZoomWin configuration
-map <Leader>z :ZoomWin<CR>
-
-" CTags
-" map <Leader>rt :!ctags --extra=+f -R *<CR><CR>
-" map <C-\> :tnext<CR>
-
 " Remember last location in file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
@@ -332,13 +338,13 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 " Auto Completion
 """""""""""""""""""""""""""""""""""""""""
 set ofu=syntaxcomplete#Complete
-set completeopt=longest,menuone
+set completeopt=longest,menuone,preview
 
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+"inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  "\ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+"inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  "\ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 

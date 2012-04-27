@@ -32,7 +32,11 @@ alias la='ls -FA'
 alias l='ls -CF'
 
 alias hm='hg remove'
-alias hgr'hg status -an0 |xargs -0 hg revert'
+alias hgr='hg status -an0 |xargs -0 hg revert'
+alias gdm='git diff master'
+alias ga='git add .'
+alias gm='git commit -m $1'
+alias gp='git push'
 
 alias -s gz=tar -xzvf
 alias -s bz2=tar -xjvf

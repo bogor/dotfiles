@@ -28,3 +28,6 @@
 [submodule "vim/bundle/vim-fuzzyfinder"]
 	path = vim/bundle/vim-fuzzyfinder
 	url = git://github.com/itspriddle/vim-fuzzyfinder-pathogen.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = git://github.com/ervandew/supertab.git
