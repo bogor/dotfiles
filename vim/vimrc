@@ -26,7 +26,7 @@ set wrap
 set wrapmargin=2
 set textwidth=79
 set formatoptions=qrnl
-set colorcolumn=85
+set colorcolumn=140
 
 " Encoding
 set encoding=utf-8
@@ -36,7 +36,7 @@ set encoding=utf-8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = ","
-inoremap jj     <ESC>
+" "inoremap jj     <ESC>
 map q" ysiw"
 map q' ysiw'
 map Q' vi'p

@@ -47,6 +47,6 @@ alias -s png=feh
 alias -s jpg=feh
 alias -s gif=feh
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-export PATH=/usr/local/bin:/usr/local/share/python:$HOME/.rvm/bin:$PATH
+alias vim='/usr/local/Cellar/macvim/7.4-77/MacVim.app/Contents/MacOS/Vim'
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/python:$HOME/.rvm/bin:$PATH
 
