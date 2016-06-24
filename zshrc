@@ -30,6 +30,8 @@ fi
 alias ll='ls -l'
 alias la='ls -FA'
 alias l='ls -CF'
+alias h='history'
+alias a='ack'
 
 alias hm='hg remove'
 alias hgr='hg status -an0 |xargs -0 hg revert'
@@ -47,6 +49,6 @@ alias -s png=feh
 alias -s jpg=feh
 alias -s gif=feh
 
-alias vim='/usr/local/Cellar/macvim/7.4-77/MacVim.app/Contents/MacOS/Vim'
+alias vim='/usr/local/Cellar/macvim/7.4-104/MacVim.app/Contents/MacOS/Vim'
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/share/python:$HOME/.rvm/bin:$PATH
 
